@@ -1,0 +1,256 @@
+/* ==================== */
+/* GLOBAL STYLES */
+/* ==================== */
+:root {
+  --primary: #667eea;
+  --primary-dark: #764ba2;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--light);
+  color: #495057;
+  line-height: 1.6;
+}
+
+/* ==================== */
+/* LAYOUT COMPONENTS */
+/* ==================== */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../images/hero-bg.jpg') center/cover no-repeat;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  color: white;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+  border-radius: 12px 12px 0 0;
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ==================== */
+/* NAVIGATION */
+/* ==================== */
+.navbar {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==================== */
+/* FORM ELEMENTS */
+/* ==================== */
+.form-control, .form-select {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: 0 2px 5px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ==================== */
+/* ADMIN SPECIFIC STYLES */
+/* ==================== */
+.admin-card {
+  border-left: 4px solid;
+  transition: all 0.3s;
+}
+
+.admin-card.bg-primary { border-left-color: var(--primary); }
+.admin-card.bg-success { border-left-color: var(--success); }
+.admin-card.bg-warning { border-left-color: var(--warning); }
+.admin-card.bg-info { border-left-color: var(--info); }
+
+/* ==================== */
+/* PAYMENT SYSTEM */
+/* ==================== */
+.payment-method-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.payment-method-card:hover {
+  border-color: var(--primary);
+  background-color: rgba(102, 126, 234, 0.05);
+}
+
+.payment-method-card.active {
+  border-color: var(--primary);
+  background-color: rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.payment-method-icon {
+  font-size: 1.75rem;
+  color: var(--secondary);
+  transition: all 0.3s;
+}
+
+.payment-method-card.active .payment-method-icon {
+  color: var(--primary);
+}
+
+.payment-success-icon {
+  font-size: 5rem;
+  color: var(--success);
+  animation: bounce 1s;
+}
+
+/* ==================== */
+/* BOOKING SYSTEM */
+/* ==================== */
+.booking-table {
+  font-size: 0.9rem;
+}
+
+.booking-table th {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.booking-table tr:hover {
+  background-color: rgba(102, 126, 234, 0.05);
+}
+
+/* Status Badges */
+.badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.badge-payment-paid,
+.badge-booking-confirmed {
+  background-color: var(--success);
+  color: white;
+}
+
+.badge-payment-pending,
+.badge-booking-pending {
+  background-color: var(--warning);
+  color: #212529;
+}
+
+.badge-payment-failed,
+.badge-booking-cancelled {
+  background-color: var(--danger);
+  color: white;
+}
+
+.badge-booking-completed {
+  background-color: var(--info);
+  color: white;
+}
+
+/* ==================== */
+/* ANIMATIONS & EFFECTS */
+/* ==================== */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+.alert {
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+/* ==================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ==================== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .payment-method-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .booking-table {
+    font-size: 0.8rem;
+  }
+}
